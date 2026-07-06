@@ -1,15 +1,96 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8">
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>slash-invest embeds</title>
-<style>body{font-family:system-ui,Segoe UI,Arial,sans-serif;max-width:640px;margin:40px auto;padding:0 18px;color:#1f2733;line-height:1.7}a{color:#1b4dad}li{margin:.4em 0}</style>
-</head><body>
-<h1>slash-invest · embeddable widgets</h1>
-<p>Free crypto tools you can embed on your site (iframe). Attribution link required.</p>
+<title>免費可嵌入工具｜交易所手續費・爆倉價計算機 — slash-invest</title>
+<meta name="description" content="免費的加密貨幣互動計算機，可直接嵌入你的網站或部落格：交易所手續費返佣試算、合約爆倉價計算。複製一段碼即可使用，只需保留來源連結。">
+<style>
+:root{--brand:#296DEB;--ink:#1b4dad;--soft:#eaf2fe;--line:#e5e7eb;--muted:#64748b}
+*{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei","Segoe UI",sans-serif;max-width:860px;margin:0 auto;padding:32px 18px 60px;color:#1f2733;line-height:1.8}
+a{color:var(--ink)}
+h1{font-size:1.7em;line-height:1.35;margin:0 0 .35em}
+.lede{color:#334155;font-size:1.05em;margin:0 0 1.4em}
+.rules{background:var(--soft);border:1px solid #cfe0fb;border-radius:14px;padding:16px 20px;margin:0 0 2.2em}
+.rules b{color:var(--ink)}
+.rules ul{margin:.5em 0 0;padding-left:1.2em}
+.rules li{margin:.35em 0}
+.card{border:1px solid var(--line);border-radius:16px;padding:20px 20px 22px;margin:0 0 30px;box-shadow:0 8px 26px -18px rgba(20,30,60,.4)}
+.card h2{font-size:1.22em;margin:0 0 .2em}
+.card .desc{color:#475569;margin:0 0 1em}
+.prev{border:1px dashed #cbd5e1;border-radius:12px;padding:6px;margin:0 0 14px;background:#fbfcfe}
+.prev iframe{display:block;width:100%;border:0}
+.codewrap{position:relative}
+.codewrap label{display:block;font-weight:700;color:#10141c;margin:0 0 6px;font-size:.95em}
+textarea{width:100%;height:120px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;line-height:1.55;color:#0f172a;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:11px 12px;resize:vertical}
+.copybtn{margin-top:9px;background:var(--brand);color:#fff;border:0;border-radius:9px;padding:9px 18px;font-weight:700;font-size:.95em;cursor:pointer}
+.copybtn:active{transform:translateY(1px)}
+.copybtn.done{background:#16a34a}
+.attr{font-size:.9em;color:var(--muted);margin:.9em 0 0}
+.attr code{background:#f1f5f9;padding:1px 6px;border-radius:5px;font-size:.92em}
+.more{border-top:1px solid var(--line);margin-top:36px;padding-top:20px;font-size:.95em}
+.more h3{margin:0 0 .4em;font-size:1.05em}
+.foot{color:var(--muted);font-size:.9em;margin-top:34px}
+</style></head><body>
+
+<h1>免費可嵌入工具 · 加密貨幣互動計算機</h1>
+<p class="lede">下面的計算機可以<strong>免費嵌入你的網站、部落格或論壇文章</strong>。複製一段 <code>&lt;iframe&gt;</code> 碼貼上就會動，行動裝置自動縮放。唯一的條件是<strong>保留下方那條「工具來源」連結</strong>——這對你的讀者也是有用的延伸資訊。</p>
+
+<div class="rules">
+<b>使用規則（很簡單）</b>
 <ul>
-<li><a href="./fee-calc-zh.html">交易所手續費返佣計算機 — Traditional Chinese fee/rebate calculator</a></li>
-<li><a href="./liq-calc-zh.html">合約爆倉價計算機 — Traditional Chinese liquidation price calculator</a></li>
-<li><a href="./fee-calc-ar.html">حاسبة رسوم التداول واسترداد العمولة — Arabic fee/rebate calculator</a></li>
-<li><a href="./liq-calc-ar.html">حاسبة سعر التصفية — Arabic liquidation price calculator</a></li>
+<li>✅ <b>完全免費</b>，商用、個人站都可以，不用問。</li>
+<li>✅ 請<b>保留 snippet 裡的「工具來源」連結</b>（指向 slash-invest.com 對應的工具頁）。</li>
+<li>✅ 請勿修改 iframe 內的計算邏輯或移除品牌條；要客製配色/欄位可來信談。</li>
 </ul>
-<p style="font-size:14px;color:#64748b">Provided by <a href="https://slash-invest.com/">slash-invest.com</a></p>
+</div>
+
+<div class="card">
+<h2>🧮 交易所手續費與返佣計算機</h2>
+<p class="desc">輸入每月交易量，即時比較 OKX／幣安／Bitget／Bybit 的年度手續費、用邀請碼能返還多少、最終淨支出，一眼看出哪家最省。現貨／合約可切換。</p>
+<div class="prev"><iframe src="./fee-calc-zh.html" title="交易所手續費與返佣計算機預覽" height="860" loading="lazy"
+ onload="(function(f){window.addEventListener('message',function(e){if(e.source===f.contentWindow&&e.data&&e.data.slxEmbedHeight)f.style.height=e.data.slxEmbedHeight+'px'})})(this)"></iframe></div>
+<div class="codewrap">
+<label for="snip-fee">嵌入碼（複製整段貼到你的文章 HTML）</label>
+<textarea id="snip-fee" readonly>&lt;!-- 交易所手續費與返佣計算機 — 由 slash-invest 提供，貼到你的文章即可 --&gt;
+&lt;iframe src="https://geminipro1688-art.github.io/slash-embed/fee-calc-zh.html" title="交易所手續費與返佣計算機" style="width:100%;max-width:780px;height:860px;border:0;overflow:hidden" loading="lazy" onload="(function(f){window.addEventListener('message',function(e){if(e.source===f.contentWindow&amp;&amp;e.data&amp;&amp;e.data.slxEmbedHeight)f.style.height=e.data.slxEmbedHeight+'px'})})(this)"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:14px"&gt;工具來源：&lt;a href="https://slash-invest.com/fee-rebate-calculator/" target="_blank"&gt;交易所手續費與返佣計算機 — slash-invest&lt;/a&gt;&lt;/p&gt;</textarea>
+<button class="copybtn" data-target="snip-fee">複製嵌入碼</button>
+</div>
+<p class="attr">貼上後你的頁面會出現一條 <code>工具來源：交易所手續費與返佣計算機</code> 連結——這就是保留給我們的來源標示，請勿刪除。</p>
+</div>
+
+<div class="card">
+<h2>💥 合約爆倉價計算機</h2>
+<p class="desc">輸入開倉價、槓桿、方向，立刻算出這筆合約大概在哪個價位會被強平，幫讀者在下單前先看清風險。</p>
+<div class="prev"><iframe src="./liq-calc-zh.html" title="合約爆倉價計算機預覽" height="1060" loading="lazy"
+ onload="(function(f){window.addEventListener('message',function(e){if(e.source===f.contentWindow&&e.data&&e.data.slxEmbedHeight)f.style.height=e.data.slxEmbedHeight+'px'})})(this)"></iframe></div>
+<div class="codewrap">
+<label for="snip-liq">嵌入碼（複製整段貼到你的文章 HTML）</label>
+<textarea id="snip-liq" readonly>&lt;!-- 合約爆倉價計算機 — 由 slash-invest 提供，貼到你的文章即可 --&gt;
+&lt;iframe src="https://geminipro1688-art.github.io/slash-embed/liq-calc-zh.html" title="合約爆倉價計算機" style="width:100%;max-width:780px;height:1060px;border:0;overflow:hidden" loading="lazy" onload="(function(f){window.addEventListener('message',function(e){if(e.source===f.contentWindow&amp;&amp;e.data&amp;&amp;e.data.slxEmbedHeight)f.style.height=e.data.slxEmbedHeight+'px'})})(this)"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:14px"&gt;工具來源：&lt;a href="https://slash-invest.com/liquidation-price-calculator/" target="_blank"&gt;合約爆倉價計算機 — slash-invest&lt;/a&gt;&lt;/p&gt;</textarea>
+<button class="copybtn" data-target="snip-liq">複製嵌入碼</button>
+</div>
+<p class="attr">同樣請保留貼上後出現的 <code>工具來源</code> 連結。</p>
+</div>
+
+<div class="more">
+<h3>العربية · Arabic widgets</h3>
+<p>Same calculators in Arabic:
+<a href="./fee-calc-ar.html">حاسبة الرسوم واسترداد العمولة</a> ·
+<a href="./liq-calc-ar.html">حاسبة سعر التصفية</a></p>
+</div>
+
+<p class="foot">免費工具由 <a href="https://slash-invest.com/">slash-invest.com</a> 提供 · 客製需求（配色／欄位／新工具）歡迎來信。</p>
+
+<script>
+document.querySelectorAll('.copybtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    var ta=document.getElementById(b.getAttribute('data-target'));
+    var txt=ta.value;
+    function done(){b.textContent='✓ 已複製';b.classList.add('done');setTimeout(function(){b.textContent='複製嵌入碼';b.classList.remove('done');},1800);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){ta.select();document.execCommand('copy');done();});}
+    else{ta.select();document.execCommand('copy');done();}
+  });
+});
+</script>
 </body></html>

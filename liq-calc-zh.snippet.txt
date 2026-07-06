@@ -1,0 +1,3 @@
+<!-- 合約爆倉價計算機 — 由 slash-invest 提供，貼到你的文章即可 -->
+<iframe src="https://geminipro1688-art.github.io/slash-embed/liq-calc-zh.html" title="合約爆倉價計算機" style="width:100%;max-width:780px;height:1060px;border:0;overflow:hidden" loading="lazy" onload="(function(f){window.addEventListener('message',function(e){if(e.source===f.contentWindow&&e.data&&e.data.slxEmbedHeight)f.style.height=e.data.slxEmbedHeight+'px'})})(this)"></iframe>
+<p style="font-size:14px">工具來源：<a href="https://slash-invest.com/liquidation-price-calculator/" target="_blank">合約爆倉價計算機 — slash-invest</a></p>
